@@ -1,0 +1,9 @@
+<resources>
+	<string name="app_name">DataDisplayFragments</string>
+
+	<string-array name="obj_type_options">
+		<item>Student</item>
+		<item>Teacher</item>
+		<item>Administrator</item>
+	</string-array>
+</resources>

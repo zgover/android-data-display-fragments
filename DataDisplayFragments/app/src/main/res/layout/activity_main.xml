@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:weightSum="1"
+	android:orientation="vertical"
+	tools:context="com.gover.zachary.datadisplayfragments.MainActivity">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:background="@android:color/darker_gray"
+		android:weightSum="1">
+
+		<Spinner
+			android:id="@+id/objType"
+			android:layout_weight="1"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingTop="12dp"
+			android:paddingBottom="11dp"
+			android:paddingLeft="15dp"
+			android:paddingRight="16dp"
+			android:entries="@array/obj_type_options"
+			tools:listitem="@layout/support_simple_spinner_dropdown_item"/>
+
+		<ImageButton
+			android:id="@+id/refreshBtn"
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:layout_marginRight="10dp"
+			android:layout_marginLeft="10dp"
+			android:background="@drawable/refresh_icon"
+			android:onClick="refreshView"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="horizontal"
+		android:background="#f3f3f3"
+		android:weightSum="1">
+
+		<fragment
+			android:id="@+id/personListFragment"
+			android:name="com.gover.zachary.datadisplayfragments.fragments.PersonListFragment"
+			android:layout_weight="0.3"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			tools:layout="@layout/person_list_fragment"/>
+
+		<fragment
+			android:id="@+id/studentFormFragment"
+			android:name="com.gover.zachary.datadisplayfragments.fragments.StudentFormFragment"
+			android:layout_weight="0.7"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:visibility="visible"
+			tools:layout="@layout/student_form_fragment"/>
+
+		<fragment
+			android:id="@+id/teacherFormFragment"
+			android:name="com.gover.zachary.datadisplayfragments.fragments.TeacherFormFragment"
+			android:layout_weight="0.7"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:visibility="gone"
+			tools:layout="@layout/teacher_form_fragment"/>
+
+		<fragment
+			android:id="@+id/adminFormFragment"
+			android:name="com.gover.zachary.datadisplayfragments.fragments.AdministratorFormFragment"
+			android:layout_weight="0.7"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:visibility="gone"
+			tools:layout="@layout/administrator_form_fragment"/>
+
+	</LinearLayout>
+
+</LinearLayout>
